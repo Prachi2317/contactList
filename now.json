@@ -1,17 +1,10 @@
 {
     "version": 2,
     "name": "nodejs-express",
-    "build": {
-        "env": {
-          "NODE_ENV": "production"
-        },
-        "command": "npm run build",
-        "output": "build"
-      },
-      "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "./routes/index.js"
-        }
-      ]
-    }
+    "builds": [
+        { "src": "index.js", "use": "@now/node" }
+    ],
+    "routes": [
+        { "src": "/(.*)", "dest": "index.js" }
+    ]
+  }
